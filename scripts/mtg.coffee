@@ -8,5 +8,5 @@ module.exports = (robot) ->
      msg.send url
 
 mtgMe = (msg, cardName, cb) ->
- encodedCardName = escape(cardName)
+ encodedCardName = escape(cardName).replace /%u2019/, "%27"
  cb "http://gatherer.wizards.com/Handlers/Image.ashx?name=#{encodedCardName}&type=card"
